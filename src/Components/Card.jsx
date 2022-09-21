@@ -6,7 +6,7 @@ class Card extends Component {
         const { movie } = this.props;
         return (
                 <div className="card">
-                    <img src={movie.image} alt="movie"/>
+                    <img width={100} src={movie.image} alt="movie"/>
                     <p>{movie.title}</p>
 
                 </div>
