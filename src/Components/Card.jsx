@@ -13,9 +13,23 @@ class Cards extends Component {
 
   likeBtn = movie => {
     if (!this.props.favs.filter(x => x.id === movie.id).length)
-      return <Button onClick={() => this.addto(movie)} variant="btn btn-outline-danger">Like</Button>
+      return (
+        <Button
+          onClick={() => this.addto(movie)}
+          variant="btn btn-outline-danger"
+        >
+          <i class="fa-regular fa-heart text-danger"></i>
+        </Button>
+      );
     else
-      return <Button onClick={() => this.removefrom(movie)} variant="btn btn-danger">Un Like</Button>
+      return (
+        <Button
+          onClick={() => this.removefrom(movie)}
+          variant="btn btn-outline-danger"
+        >
+          <i class="fa-solid fa-heart text-danger"></i>
+        </Button>
+      );
   }
 
 
@@ -46,7 +60,6 @@ function Example({ description }) {
         onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
         aria-expanded={open}
-        className="btn-outline-warning"
       >
         Show Description
       </Button>

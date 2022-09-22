@@ -10,19 +10,28 @@ function OffCanvasExample({ name, favs, removeFromFavs, ...props }) {
     const handleShow = () => setShow(true);
 
     return (
-        <>
-            <Button variant="primary" onClick={handleShow} className="me-2">
-                {name}
-            </Button>
-            <Offcanvas show={show} onHide={handleClose} {...props} className="h-100">
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>{name}</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                    <FavsCards removeFromFavs={removeFromFavs} favs={favs} />
-                </Offcanvas.Body>
-            </Offcanvas>
-        </>
+      <>
+        <Button
+          variant="nav-link"
+          onClick={handleShow}
+          className="me-2 nav-link"
+        >
+          {name}
+        </Button>
+        <Offcanvas
+          show={show}
+          onHide={handleClose}
+          {...props}
+          className="h-100"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>{name}</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <FavsCards removeFromFavs={removeFromFavs} favs={favs} />
+          </Offcanvas.Body>
+        </Offcanvas>
+      </>
     );
 }
 

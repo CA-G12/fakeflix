@@ -6,7 +6,7 @@ import Collapse from "react-bootstrap/Collapse";
 export class FavsCards extends Component {
     render() {
         const { favs } = this.props
-        if (!favs.length) return (<h1 className="text-danger text-center">No Favs!</h1>)
+        if (!favs.length) return <h1 className="text-danger text-center">No favorites!</h1>;
         return (
             <div className="App">
                 <div className="container">
@@ -29,7 +29,14 @@ class Cards extends Component {
         if (!this.props.favs.filter(x => x.id === movie.id).length)
             return <></>
         else
-            return <Button onClick={() => this.removefrom(movie)} variant="btn btn-danger">Un Like</Button>
+            return (
+              <Button
+                onClick={() => this.removefrom(movie)}
+                variant="btn btn-outline-danger"
+              >
+                <i class="fa-solid fa-heart text-danger"></i>
+              </Button>
+            );
     }
     render() {
         const { movie } = this.props;
@@ -54,7 +61,6 @@ function Example({ description }) {
                 onClick={() => setOpen(!open)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
-                className="btn-outline-warning"
             >
                 Show Description
             </Button>
