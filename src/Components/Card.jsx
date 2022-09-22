@@ -3,6 +3,22 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
 class Cards extends Component {
+
+  addto = (data) => {
+    this.props.addToFavs(data);
+  }
+  removefrom = (data) => {
+    this.props.removeFromFavs(data);
+  }
+
+  likeBtn = movie => {
+    if (!this.props.favs.filter(x => x.id === movie.id).length)
+      return <Button onClick={() => this.addto(movie)} variant="btn btn-outline-danger">Like</Button>
+    else
+      return <Button onClick={() => this.removefrom(movie)} variant="btn btn-danger">Un Like</Button>
+  }
+
+
   render() {
     const { movie } = this.props;
     return (
@@ -11,7 +27,10 @@ class Cards extends Component {
         <Card.Body>
           <Card.Title>{movie.title}</Card.Title>
           <Example description={movie.description} />
-          <Button variant="outline-danger">Like</Button>
+          {
+            this.likeBtn(movie)
+          }
+
         </Card.Body>
       </Card>
     );

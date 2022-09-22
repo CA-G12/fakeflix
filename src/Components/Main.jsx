@@ -27,11 +27,11 @@ export class Main extends Component {
         return (
             <div className="App">
                 <div className="container">
-                <div className="row">
-                    {movies.map(movie =>
-                        <Cards movie={movie} />
-                    )}
-                </div>
+                    <div className="row">
+                        {movies.map(movie =>
+                            <Cards favs={this.props.favs} removeFromFavs={this.props.removeFromFavs} addToFavs={this.props.addToFavs} movie={movie} />
+                        )}
+                    </div>
                 </div>
             </div>
         );

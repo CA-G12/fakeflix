@@ -1,48 +1,30 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { Main, Header } from "./Components";
 
-
 class App extends Component {
-  render () {
+  state = {
+    favs: []
+  }
+
+  addToFavs = fav => {
+    this.setState({ favs: [...this.state.favs, fav] })
+  }
+  removeFromFavs = fav => {
+    const data = this.state.favs.filter(x => x.id !== fav.id)
+    this.setState({ favs: [...data] })
+  }
+
+  render() {
     return (
       <Router>
         <div className="container">
-          <Header />
-          <Main />
+          <Header removeFromFavs={this.removeFromFavs} favs={this.state.favs} />
+          <Main favs={this.state.favs} addToFavs={this.addToFavs} removeFromFavs={this.removeFromFavs} />
         </div>
       </Router>
     )
   }
 }
 
-
-
-// function BasicExample() {
-//   return (
-//     <Navbar bg="light" expand="lg">
-//       <Container>
-//         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-//         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//         <Navbar.Collapse id="basic-navbar-nav">
-//           <Nav className="me-auto">
-//             <Nav.Link href="#home">Home</Nav.Link>
-//             <Nav.Link href="#link">Link</Nav.Link>
-//             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-//               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-//               <NavDropdown.Item href="#action/3.2">
-//                 Another action
-//               </NavDropdown.Item>
-//               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-//               <NavDropdown.Divider />
-//               <NavDropdown.Item href="#action/3.4">
-//                 Separated link
-//               </NavDropdown.Item>
-//             </NavDropdown>
-//           </Nav>
-//         </Navbar.Collapse>
-//       </Container>
-//     </Navbar>
-//   );
-// }
-  export default App;
+export default App;
