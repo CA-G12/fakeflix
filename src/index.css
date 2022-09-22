@@ -1,0 +1,66 @@
+img.logo {
+    width: 40px;
+    height: 50px;
+    margin-right: 16px;
+}
+
+a.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+    color: #f6c83e;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #f6c83e;
+    outline: 0;
+    box-shadow: none;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #f6c83e;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: #f6c83e;
+}
+
+
+.btn:first-child:hover, :not(.btn-check)+.btn:hover {
+    color: #fff;
+}
+
+.bg-light {
+    background-color: transparent !important; 
+}
+.navbar-toggler-icon{
+    color: #f6c83e;
+}
+.navbar-toggler{
+    color: #f6c83e;
+    border-color: #f6c83e;
+}
+
+.card {
+    border: none;
+    margin-bottom: 32px;
+}
+
+.row {
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body {
+    position: relative;
+}
+
+button.btn.btn-outline-danger {
+    position: absolute;
+    right: 0;
+}
+
+button.btn.btn-outline-danger {
+    position: absolute;
+    right: 0;
+}

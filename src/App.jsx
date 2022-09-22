@@ -1,18 +1,19 @@
+import React, { Component } from "react";
+import { BrowserRouter as Router} from 'react-router-dom'
+import { Main, Header } from "./Components";
 
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import { Main } from "./Components";
-function App() {
-  return (
-    <div>
-      {/* <BasicExample /> */}
-      Home
-      <Main />
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <Router>
+        <div className="container">
+          <Header />
+          <Main />
+        </div>
+      </Router>
+    )
+  }
 }
 
 

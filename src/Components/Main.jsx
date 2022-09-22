@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "./Card";
+import Cards from "./Card";
 
 export class Main extends Component {
     state = {
@@ -26,10 +26,12 @@ export class Main extends Component {
         const movies = this.state.data;
         return (
             <div className="App">
-                <div>
+                <div className="container">
+                <div className="row">
                     {movies.map(movie =>
-                        <Card movie={movie} />
+                        <Cards movie={movie} />
                     )}
+                </div>
                 </div>
             </div>
         );
